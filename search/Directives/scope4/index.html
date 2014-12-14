@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.css">
+</head>
+<body>
+<div ng-app="drinkApp">
+    <div ng-controller="AppCtrl">
+        Value come from ctrlFlavor -> input
+        <input type="text" ng-model="ctrlFlavor">
+        from ctrlFlavor -> directive
+       <div drink flavor="{{ctrlFlavor}}"></div>
+        <p></p>
+        Value come from Hardcoded html -> directive
+        <div drink flavor="Strawberry"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

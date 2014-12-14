@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script type="application/javascript">
+        function draw() {
+            var canvas = document.getElementById("canvas");
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+
+                ctx.fillStyle = "rgb(200,0,0)";
+                ctx.fillRect (10, 10, 255, 250);
+
+                ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+                ctx.fillRect (30, 30, 255, 250);
+
+                ctx.fill(255, 255, 0);
+                ctx.ellipse(202, 208, 300, 300);
+
+                // the starting size for the sun
+                var sunSize = 30;
+                var rs = 255;
+                var gs = 204;
+                var rb = 57;
+                var gb = 219;
+                var bb = 192;
+
+                var draw = function() {
+                    noStroke();
+                    // the beautiful blue sky
+                    background(rb, gb, bb);
+                    // The sun, a little circle on the horizon
+                    fill(rs, gs, 0);
+                    ellipse(200, 298, sunSize, sunSize);
+
+                    // The land, blocking half of the sun
+                    fill(76, 168, 67);
+                    rect(0, 300, 400, 100);
+                    if (sunSize <= 400) {
+                        sunSize = sunSize +10;
+                    }
+                    if (gs >= 0) {
+                        gs = gs - 2;
+                    }
+                    if (bb >= 0) {
+                        bb = bb - 2;
+                    }
+                    if (gb >= 0) {
+                        gb = gb - 2;
+                    }
+                };
+
+
+            }
+        }
+    </script>
+
+
+
+
+</head>
+<body onload="draw();">
+<canvas id="canvas" width="800" height="600"></canvas>
+</body>
+</html>
